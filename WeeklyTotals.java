@@ -14,7 +14,8 @@ public class WeeklyTotals {
     public double game6;
     public double[] weeklyPointTotals = new double[6];
 
-    public WeeklyTotals(int firstGame, int secondGame, int thirdGame, int fourthGame, int fifthGame, int sixthGame) {
+    public WeeklyTotals(int weekNumber, double firstGame, double secondGame, double thirdGame, double fourthGame, double fifthGame, double sixthGame) {
+        week = weekNumber;
         game1 = firstGame;
         game2 = secondGame;
         game3 = thirdGame;
@@ -24,14 +25,26 @@ public class WeeklyTotals {
     }
     
     public double calculateAverageWinpoints() {
+        double x = 0;
+        weeklyPointTotals[0] = game1;
+        weeklyPointTotals[1] = game2;
+        weeklyPointTotals[2] = game3;
+        weeklyPointTotals[3] = game4;
+        weeklyPointTotals[4] = game5;
+        weeklyPointTotals[5] = game6;
+        for (int i = 0; i < weeklyPointTotals.length; i++) {
+            x += weeklyPointTotals[i];
+        }
+        return x/6;
+        
         //resume here:
         //https://docs.oracle.com/javase/tutorial/java/javaOO/variables.html
         // do i want to do anythign with win total here, or just simply get it, which then it should be a class attribute
         // add all win points together per week and divide by total games
-        return game1;
     }
+
     public static void main(String[] args ) {
-        WeeklyTotals weeklyData = new WeeklyTotals();
-        System.out.println(weeklyData.winPoints(100.05));
+        WeeklyTotals weeklyData = new WeeklyTotals(6, 139.83, 133.34, 108.45, 142.83, 129.24, 107.85);
+        System.out.println(weeklyData.calculateAverageWinpoints());
     }
 }
