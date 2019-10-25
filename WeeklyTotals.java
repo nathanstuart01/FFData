@@ -1,8 +1,3 @@
-// make a class that breaks down the the weekly matchup
-// gathers winning points/ losing points
-//gets points by position
-//eventually use this data to see which positions are producing most points
-// make this weekly class into a yearly class and a other stuff
 public class WeeklyTotals {
 
     public int week;
@@ -36,15 +31,6 @@ public class WeeklyTotals {
             x += weeklyPointTotals[i];
         }
         return x/6;
-        
-        //resume here:
-        //https://docs.oracle.com/javase/tutorial/java/javaOO/variables.html
-        // do i want to do anythign with win total here, or just simply get it, which then it should be a class attribute
-        // add all win points together per week and divide by total games
     }
 
-    public static void main(String[] args ) {
-        WeeklyTotals weeklyData = new WeeklyTotals(6, 139.83, 133.34, 108.45, 142.83, 129.24, 107.85);
-        System.out.println(weeklyData.calculateAverageWinpoints());
-    }
 }

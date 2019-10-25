@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - HelperFunctions",
+            "request": "launch",
+            "mainClass": "HelperFunctions",
+            "projectName": "FFData_80120ab1"
+        }
+    ]
+}
