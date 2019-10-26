@@ -1,6 +1,8 @@
+import java.lang.Math;
+
 public class HelperFunctions {
     
-    public float calculateStandardDeviation(float[] points){
+    public double calculateStandardDeviation(float[] points){
         float meanPointsAgainst = calculateMean(points);
         float[] data;
         data = new float[points.length];
@@ -8,11 +10,15 @@ public class HelperFunctions {
             float x = points[i];
             float y = (x - meanPointsAgainst);
             float z = (y * y);
-            data[i]=z; 
+            data[i] = z; 
         }
-        return data[0];
-        // for each number in dataset subtract the Mean and square the result
-        // use mean function here to calculate standard deviation
+        float meanSquaredDifferences = calculateMean(data);
+
+        double standardDeviation;
+
+        standardDeviation = Math.sqrt(meanSquaredDifferences);
+
+        return standardDeviation;
     }
 
     public float calculateMean(float[] points){
@@ -23,6 +29,8 @@ public class HelperFunctions {
         float meanPoints = totalPoints / points.length;
         return meanPoints;
     }
+
+    //maybe figure out how to determine if the dataset is normal?
 
     public static void main(String[] args) {
         HelperFunctions test = new HelperFunctions();
@@ -36,8 +44,8 @@ public class HelperFunctions {
         pointsAgainst[4] = 0.00f;
         pointsAgainst[5] = 11.20f;
         pointsAgainst[6] = 2.00f;
-        float jaxAveragePointsTE = test.calculateMean(pointsAgainst);
-        System.out.println(jaxAveragePointsTE);
+        double teRangeOutcomes = test.calculateStandardDeviation(pointsAgainst);
+        System.out.println(teRangeOutcomes);
     }
 
 }
