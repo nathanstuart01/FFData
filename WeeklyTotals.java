@@ -31,6 +31,7 @@ public class WeeklyTotals {
             x += weeklyPointTotals[i];
         }
         return x/6;
+
     }
 
     public double calculateAveragePointsPerPlayer(double averagePoints) {
