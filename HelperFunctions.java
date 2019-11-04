@@ -29,6 +29,4 @@ public class HelperFunctions {
         float meanPoints = totalPoints / points.length;
         return meanPoints;
     }
-
-    //maybe figure out how to determine if the dataset is normal?
 }
